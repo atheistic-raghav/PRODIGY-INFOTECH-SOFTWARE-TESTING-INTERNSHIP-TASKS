@@ -2,7 +2,7 @@
 
 ## TC01 – Adding Two Numbers
 **Preconditions:**  
-- sCalc app is open in the browser  
+- sCalc app is open in the browser (https://dunizb.github.io/sCalc/index.html)  
 - Display shows "0"
 
 **Steps:**  
