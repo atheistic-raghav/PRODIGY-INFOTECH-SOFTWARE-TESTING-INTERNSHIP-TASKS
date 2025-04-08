@@ -1,288 +1,168 @@
-# sCalc Test Cases
+# 🧮 sCalc Functional Test Report
 
-## TC01 – Adding Two Numbers
-**Preconditions:**  
-- sCalc app is open in the browser (https://dunizb.github.io/sCalc/index.html)  
-- Display shows "0"
-
-**Steps:**  
-1. Tap `2`  
-2. Tap `＋`  
-3. Tap `3`  
-4. Tap `＝`
-
-**Expected Result:**  
-Display shows `5`
+**App:** sCalc – Simple Web Calculator  
+**URL:** https://dunizb.github.io/sCalc/index.html  
+**Tester:** Raghav Agarwal  
+**Date:** April 7, 2025  
+**Environment:**  
+- **Browser:** Chrome 112 (Windows 10)  
+- **Device:** Desktop (1920×1080)
 
 ---
 
-## TC02 – Subtracting Two Numbers
-**Preconditions:**  
-- Display shows "0"
+## ✅ Basic Arithmetic Operations
 
+### TC01 – Adding Two Numbers
 **Steps:**  
-1. Tap `8`  
-2. Tap `－`  
-3. Tap `5`  
-4. Tap `＝`
-
-**Expected Result:**  
-Display shows `3`
+Tap: `2` → `＋` → `3` → `＝`  
+**Expected:** Display shows `5`
 
 ---
 
-## TC03 – Multiplying Two Numbers
-**Preconditions:**  
-- Display shows "0"
-
+### TC02 – Subtracting Two Numbers  
 **Steps:**  
-1. Tap `4`  
-2. Tap `×`  
-3. Tap `6`  
-4. Tap `＝`
-
-**Expected Result:**  
-Display shows `24`
+Tap: `8` → `－` → `5` → `＝`  
+**Expected:** Display shows `3`
 
 ---
 
-## TC04 – Dividing Two Numbers
-**Preconditions:**  
-- Display shows "0"
-
+### TC03 – Multiplying Two Numbers  
 **Steps:**  
-1. Tap `9`  
-2. Tap `÷`  
-3. Tap `3`  
-4. Tap `＝`
-
-**Expected Result:**  
-Display shows `3`
+Tap: `4` → `×` → `6` → `＝`  
+**Expected:** Display shows `24`
 
 ---
 
-## TC05 – Immediate Execution (No Operator Precedence)
-**Preconditions:**  
-- Display shows "0"
-
+### TC04 – Dividing Two Numbers  
 **Steps:**  
-1. Tap `2`  
-2. Tap `＋`  
-3. Tap `3`  
-4. Tap `×`  
-5. Tap `4`  
-6. Tap `＝`
-
-**Expected Result:**  
-Display shows `20`  
-*(First 2 + 3 = 5, then 5 × 4)*
+Tap: `9` → `÷` → `3` → `＝`  
+**Expected:** Display shows `3`
 
 ---
 
-## TC06 – Chaining Operations Without Equals
-**Preconditions:**  
-- Display shows "0"
+## ⚙️ Operation Logic & Chaining
 
+### TC05 – Immediate Execution (No Operator Precedence)  
 **Steps:**  
-1. Tap `5`  
-2. Tap `＋`  
-3. Tap `2`  
-4. Tap `×`  
-5. Tap `3`  
-6. Tap `＝`
-
-**Expected Result:**  
-Display shows `21`  
-*(5 + 2 = 7, then 7 × 3)*
+Tap: `2` → `＋` → `3` → `×` → `4` → `＝`  
+**Expected:** Display shows `20`  
+*(Evaluated left to right: (2 + 3) = 5 → 5 × 4)*
 
 ---
 
-## TC07 – Decimal Addition
-**Preconditions:**  
-- Display shows "0"
-
+### TC06 – Chaining Operations Without Pressing Equals  
 **Steps:**  
-1. Tap `3`, then `.`, then `2`  
-2. Tap `＋`  
-3. Tap `0`, then `.`, then `8`  
-4. Tap `＝`
-
-**Expected Result:**  
-Display shows `4`
+Tap: `5` → `＋` → `2` → `×` → `3` → `＝`  
+**Expected:** Display shows `21`  
+*(Evaluated as: 5 + 2 = 7 → 7 × 3)*
 
 ---
 
-## TC08 – Leading Decimal Input
-**Preconditions:**  
-- Display shows "0"
+## 🔢 Decimal Input
 
+### TC07 – Decimal Addition  
 **Steps:**  
-1. Tap `.`, then `5`  
-2. Tap `＋`  
-3. Tap `.`, then `2`  
-4. Tap `＝`
-
-**Expected Result:**  
-Display shows `0.7`
+Tap: `3` → `.` → `2` → `＋` → `0` → `.` → `8` → `＝`  
+**Expected:** Display shows `4`
 
 ---
 
-## TC09 – Negative Number Addition
-**Preconditions:**  
-- Display shows "0"
-
+### TC08 – Leading Decimal Input  
 **Steps:**  
-1. Tap `－`, then `5`  
-2. Tap `＋`  
-3. Tap `3`  
-4. Tap `＝`
-
-**Expected Result:**  
-Display shows `-2`
+Tap: `.` → `5` → `＋` → `.` → `2` → `＝`  
+**Expected:** Display shows `0.7`
 
 ---
 
-## TC10 – Division by Zero
-**Preconditions:**  
-- Display shows "0"
-
+### TC11 – Multiple Decimal Points  
 **Steps:**  
-1. Tap `5`  
-2. Tap `÷`  
-3. Tap `0`  
-4. Tap `＝`
-
-**Expected Result:**  
-Display shows `Infinity` or an appropriate `Error` message
+Tap: `5` → `.` → `2` → `.` → `3`  
+**Expected:** Second decimal is ignored → Display shows `5.23`
 
 ---
 
-## TC11 – Multiple Decimal Input
-**Preconditions:**  
-- Display shows "0"
+## ➕ Special Scenarios
 
+### TC09 – Negative Number Addition  
 **Steps:**  
-1. Tap `5`, then `.`, then `2`, then `.`, then `3`
-
-**Expected Result:**  
-Second `.` is ignored; display shows `5.23`
+Tap: `－` → `5` → `＋` → `3` → `＝`  
+**Expected:** Display shows `-2`
 
 ---
 
-## TC12 – Equals Without Operation
-**Preconditions:**  
-- Display shows "0"
-
+### TC10 – Division by Zero  
 **Steps:**  
-1. Tap `7`  
-2. Tap `＝`
-
-**Expected Result:**  
-Display remains `7`
+Tap: `5` → `÷` → `0` → `＝`  
+**Expected:** Display shows `Infinity` or appropriate error message
 
 ---
 
-## TC13 – Clear Entry (CE) Functionality
-**Preconditions:**  
-- Display shows "0"
-
+### TC12 – Equals Without Operation  
 **Steps:**  
-1. Tap `2`, then `＋`, then `3`  
-2. Tap `CE`  
-3. Tap `4`  
-4. Tap `＝`
-
-**Expected Result:**  
-Display shows `4`
+Tap: `7` → `＝`  
+**Expected:** Display remains `7`
 
 ---
 
-## TC14 – Backspace (←) Functionality
-**Preconditions:**  
-- Display shows "0"
+## 🧹 Functional Controls
 
+### TC13 – Clear Entry (CE)  
 **Steps:**  
-1. Tap `1`, then `2`, then `3`  
-2. Tap `←` → should show `12`  
-3. Tap `←` → should show `1`  
-4. Tap `←` → should show `0`
+Tap: `2` → `＋` → `3` → `CE` → `4` → `＝`  
+**Expected:** Display shows `4`
 
 ---
 
-## TC15 – Modulo (%) Functionality
-**Preconditions:**  
-- Display shows "0"
-
+### TC14 – Backspace (←)  
 **Steps:**  
-1. Tap `5`, then `0`  
-2. Tap `%`  
-3. Tap `3`  
-4. Tap `＝`
-
-**Expected Result:**  
-Display shows `2`  
-*(50 % 3 = 2)*
+Tap: `1` → `2` → `3` → `←` → `←` → `←`  
+**Expected:** Display shows `12` → `1` → `0`
 
 ---
 
-## TC16 – Theme Toggle (Light/Dark Mode)
-**Preconditions:**  
-- Display shows "0" in light theme
-
+### TC15 – Modulo (%)  
 **Steps:**  
-1. Tap the **theme toggle icon**
-
-**Expected Result:**  
-UI switches to dark theme (navigates to the dark‑theme page; functionality remains intact)
+Tap: `5` → `0` → `%` → `3` → `＝`  
+**Expected:** Display shows `2`  
+*(50 mod 3 = 2)*
 
 ---
 
-## TC17 – Cancel (Close) Icon
-**Preconditions:**  
-- Display shows "0"
+## 🎨 UI & Appearance
 
+### TC16 – Theme Toggle (Light ↔ Dark Mode)  
 **Steps:**  
-1. Tap the **Cancel (✖)** icon
-
-**Expected Result:**  
-Calculator window slides down and disappears (app hides)
+Tap the **theme toggle icon**  
+**Expected:** UI switches between light and dark themes without affecting functionality
 
 ---
 
-## TC18 – Full-Screen (Maximize) Icon
-**Preconditions:**  
-- Display shows "0"
-
+### TC17 – Cancel (✖) Icon  
 **Steps:**  
-1. Tap the **Full Screen (口)** icon
-
-**Expected Result:**  
-Calculator expands to fill the browser viewport; tapping again restores original size
+Tap the **cancel icon**  
+**Expected:** Calculator window slides down and hides
 
 ---
 
-## TC19 – Dark-Theme Functionality
-**Preconditions:**  
-- Calculator is in dark theme
-
+### TC18 – Full-Screen (⛶) Icon  
 **Steps:**  
-1. Tap `2`  
-2. Tap `＋`  
-3. Tap `2`  
-4. Tap `＝`
-
-**Expected Result:**  
-Display shows `4` (operations work normally in dark mode)
+Tap the **full-screen icon**  
+**Expected:** Calculator expands to fill the screen; tap again to return to normal view
 
 ---
 
-## TC20 – One-Hand Mode Toggle
-**Preconditions:**  
-- Display shows "0" in standard layout
-
+### TC19 – Dark Mode Functionality  
 **Steps:**  
-1. Swipe the calculator panel left  
-2. Swipe the calculator panel right
+Enable dark mode → Tap: `2` → `＋` → `2` → `＝`  
+**Expected:** Display shows `4` – all operations work in dark mode
 
-**Expected Result:**  
-Layout shifts to left-hand mode, then shifts back to right-hand mode
+---
+
+### TC20 – One-Hand Mode Toggle  
+**Steps:**  
+Swipe calculator panel left → swipe right  
+**Expected:** Layout switches to left-hand mode, then back to right-hand mode
+
+---
+
+*End of Report*
